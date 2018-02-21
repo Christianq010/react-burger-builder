@@ -114,8 +114,6 @@ const Bacon = styled.div`
     margin: 2% auto;
 `;
 
-
-
 class BurgerIngredient extends Component {
     render () {
         let ingredient = null;
@@ -140,9 +138,6 @@ class BurgerIngredient extends Component {
                 break;
             case ('bacon'):
                 ingredient = <Bacon />;
-                break;
-            case ('meat'):
-                ingredient = <Meat />;
                 break;
             case ('salad'):
                 ingredient = <Salad />;

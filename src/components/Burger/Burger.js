@@ -26,16 +26,29 @@ const Burger = styled.div`
     }
 `;
 
+const Para = styled.p`
+    font-weight: bold;
+`;
+
 
 const burger = (props) => {
     // Transform an object of keywords into an array of burger ingredients where
     // the value of the object should tell me how many ingredients to add, and the key
     // should tell me the type of ingredient needed
-    const transformedIngredients = Object.keys(props.ingredients).map(igKey => {
-        return [...Array(props.ingredients[igKey])].map((_, i) => {
-            return <BurgerIngredient key={igKey + i} type={igKey} />
-        });
-    });
+    let transformedIngredients = Object.keys(props.ingredients)
+        .map(igKey => {
+            return [...Array(props.ingredients[igKey])].map((_, i) => {
+                return <BurgerIngredient key={igKey + i} type={igKey} />
+            });
+        })
+        // Check if we have ingredients or not, else add paragraph
+        .reduce((arr, el) => {
+            return arr.concat(el)
+        }, []);
+    if (transformedIngredients.length === 0) {
+        transformedIngredients = <Para>Please start adding ingredients</Para>
+    }
+
     return (
         <Burger>
             <BurgerIngredient type="bread-top"/>

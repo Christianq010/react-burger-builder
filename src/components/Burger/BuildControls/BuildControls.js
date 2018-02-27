@@ -19,8 +19,11 @@ const controls = [
     {label: 'Meat', type: 'meat'}
 ];
 
+// Use toFix to use number with two decimal places only
 const buildControls = (props) => (
     <BuildControls>
+        
+        <p>Current Price: {props.price.toFixed(2)}</p>
         {controls.map(cntrl => (
             <BuildControl 
                         key={cntrl.label} 

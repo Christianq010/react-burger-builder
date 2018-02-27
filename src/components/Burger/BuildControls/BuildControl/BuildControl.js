@@ -46,6 +46,10 @@ const BuildButton = styled.button`
             color: white;
         }
     `}
+    ${props => props.disabled && css`
+        background-color: grey;
+        color: white;
+    `}
 `;
 
 const Label = styled.label`
@@ -58,7 +62,7 @@ const Label = styled.label`
 const buildControl = (props) => (
     <BuildControl>
         <Label>{props.label}</Label>
-        <BuildButton less>Less</BuildButton>
+        <BuildButton less onClick={props.removed} disabled={props.disabled}>Less</BuildButton>
         <BuildButton more onClick={props.added}>More</BuildButton>
     </BuildControl>
 )

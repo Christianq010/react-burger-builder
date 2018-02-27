@@ -26,6 +26,8 @@ const buildControls = (props) => (
                         key={cntrl.label} 
                         label={cntrl.label} 
                         added={() => props.ingredientAdded(cntrl.type)} 
+                        removed={() => props.ingredientRemoved(cntrl.type)} 
+                        disabled={props.disabled[cntrl.type]}
             />
         ))}
     </BuildControls>

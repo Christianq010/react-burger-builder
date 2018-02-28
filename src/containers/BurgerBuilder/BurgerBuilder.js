@@ -4,6 +4,8 @@ import React, { Component } from 'react';
 import Aux from './../../hoc/Aux';
 import Burger from './../../components/Burger/Burger'
 import BurgerControls from './../../components/Burger/BuildControls/BuildControls';
+import Modal from './../../components/UI/Modal/Modal';
+import OrderSummary from './../../components/Burger/OrderSummary/OrderSummary';
 
 // Global constants
 const INGREDIENT_PRICES = {
@@ -81,14 +83,17 @@ class BurgerBuilder extends Component {
         }
         return ( 
             <Aux>
-                <Burger ingredients={this.state.ingredients}/>
-                <BurgerControls 
-                    ingredientAdded={this.addIngredientHandler}
-                    ingredientRemoved={this.removeIngredientHandler}
-                    disabled={disabledInfo}
-                    purchaseable={this.state.purchaseable}
-                    price={this.state.totalPrice}
-                />
+                <Modal>
+                    <OrderSummary ingredients={this.state.ingredients}/>
+                </Modal>
+                    <Burger ingredients={this.state.ingredients}/>
+                    <BurgerControls 
+                        ingredientAdded={this.addIngredientHandler}
+                        ingredientRemoved={this.removeIngredientHandler}
+                        disabled={disabledInfo}
+                        purchaseable={this.state.purchaseable}
+                        price={this.state.totalPrice}
+                    />
             </Aux>
         );
     }

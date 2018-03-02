@@ -1,7 +1,7 @@
 import React from 'react';
 
 // Styles
-import styled from 'styled-components';
+import styled, {css} from 'styled-components';
 
 const Modal = styled.div`
     position: fixed;
@@ -19,6 +19,8 @@ const Modal = styled.div`
         width: 500px;
         left: calc(50% - 250px);
     }
+
+    
 `;
 
 const modal = (props) => (

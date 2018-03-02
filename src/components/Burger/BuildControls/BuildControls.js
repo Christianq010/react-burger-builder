@@ -1,7 +1,7 @@
 import React from 'react';
 
 // Styles
-import styled, {keyframes} from 'styled-components';
+import styled, {keyframes, css} from 'styled-components';
 
 import BuildControl from './BuildControl/BuildControl';
 
@@ -49,6 +49,10 @@ const OrderButton = styled.button`
     &:not(:disabled) {
         animation: enable 0.3s linear;
     }
+
+    ${props => props.tranform && css`
+        /* some style */
+    `}
 `;
 
 const controls = [
@@ -73,7 +77,8 @@ const buildControls = (props) => (
         ))}
         <OrderButton
                 disabled={!props.purchaseable}
-        >Order Now
+                onClick={props.ordered}>
+            Order Now
         </OrderButton>
     </BuildControls>
 );

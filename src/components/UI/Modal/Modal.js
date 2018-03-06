@@ -22,8 +22,6 @@ const Modal = styled.div`
         width: 500px;
         left: calc(50% - 250px);
     }
-
-
 `;
 
 const modal = (props) => (

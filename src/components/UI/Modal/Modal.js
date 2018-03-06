@@ -1,5 +1,8 @@
 import React from 'react';
 
+import Aux from './../../../hoc/Aux';
+import Backdrop from './../Backdrop/Backdrop';
+
 // Styles
 import styled from 'styled-components';
 
@@ -24,12 +27,15 @@ const Modal = styled.div`
 `;
 
 const modal = (props) => (
-    <Modal style={{
-            transform: props.show ? 'translateY(0)' : 'translateY(-100vh)',
-            opacity: props.show ? '1' : '0'
-    }}>
-        {props.children}
-    </Modal>
+    <Aux>
+        <Backdrop show={props.show} clicked={props.modalClosed}/>
+        <Modal style={{
+                transform: props.show ? 'translateY(0)' : 'translateY(-100vh)',
+                opacity: props.show ? '1' : '0'
+        }}>
+            {props.children}
+        </Modal>
+    </Aux>
 );
 
 export default modal;

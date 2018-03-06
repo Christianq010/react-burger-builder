@@ -1,7 +1,7 @@
 import React from 'react';
 
 // Styles
-import styled, {css} from 'styled-components';
+import styled from 'styled-components';
 
 const Modal = styled.div`
     position: fixed;
@@ -20,11 +20,14 @@ const Modal = styled.div`
         left: calc(50% - 250px);
     }
 
-    
+
 `;
 
 const modal = (props) => (
-    <Modal>
+    <Modal style={{
+            transform: props.show ? 'translateY(0)' : 'translateY(-100vh)',
+            opacity: props.show ? '1' : '0'
+    }}>
         {props.children}
     </Modal>
 );

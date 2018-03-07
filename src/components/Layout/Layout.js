@@ -1,18 +1,17 @@
 import React from 'react';
 import Aux from '../../hoc/Aux';
+import Toolbar from './../Toolbar/Toolbar';
 
 // Styling
 import styled from 'styled-components';
 
 const Content = styled.main`
-  margin-top: 16px;
+    margin-top: 72px;
 `;
 
 const layout = (props) => (
     <Aux>
-        <div>
-            <p>Toolbar, Sidebar, Backdrop</p>
-        </div>
+        <Toolbar />
         <Content>
             {props.children}
         </Content>

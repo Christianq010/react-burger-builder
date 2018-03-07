@@ -1,5 +1,7 @@
 import React from 'react';
 
+import Logo from './../Logo/Logo';
+
 // Styles
 import styled from 'styled-components';
 
@@ -26,6 +28,7 @@ const toolbar = (props) => (
     <Toolbar>
         <div>Menu</div>
         <div>Logo</div>
+        <Logo />
         <nav>
             <ul>
                 <li>...</li>

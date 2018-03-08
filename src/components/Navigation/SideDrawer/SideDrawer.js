@@ -36,7 +36,7 @@ const LogoHeight = styled.div`
     margin-bottom: 17px;
 `;
 
-
+// Use above classes when backdrop clicked
 const sideDrawer = (props) => {
     let attachClass = ['close'];
     if (props.open) {

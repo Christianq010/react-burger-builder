@@ -8,6 +8,7 @@ import styled from 'styled-components';
 
 const LogoDiv = styled.div`
     background-color: white;
+    margin: 3px 0;
     padding: 8px;
     height: 80%;
     box-sizing: border-box;

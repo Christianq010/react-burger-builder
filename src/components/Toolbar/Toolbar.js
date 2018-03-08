@@ -2,6 +2,7 @@ import React from 'react';
 
 import Logo from './../Logo/Logo';
 import Nav from './../Navigation/NavigationItems/NavigationItems';
+import ToggleIcon from './../Navigation/SideDrawer/DrawerToggle/DrawerToggle';
 
 // Styles
 import styled from 'styled-components';
@@ -24,7 +25,7 @@ const Toolbar = styled.header`
     }
     /* Hide when above 500px */
     @media (max-width: 499px) {
-        display: none;
+        /* display: none; */
     }
 `;
 
@@ -36,7 +37,7 @@ const LogoHeight = styled.div`
 
 const toolbar = (props) => (
     <Toolbar>
-        <div>Menu</div>
+        <ToggleIcon click={props.drawerToggleClicked} />
         <LogoHeight>
             <Logo />
         </LogoHeight>

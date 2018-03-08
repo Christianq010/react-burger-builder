@@ -18,11 +18,19 @@ class Layout extends Component {
     sideDrawClosedHandler = () => {
         this.setState({showSideDraw: false});
     }
+    // Use prevState instead of this.state to change state when Humburger icon is clicked
+    sideDrawerClicked = () => {
+        this.setState ( (prevState) => {
+            return {showSideDraw: !prevState.showSideDraw}; 
+        }
+
+        );
+    }
 
     render () {
         return (
             <Aux>
-                <Toolbar />
+                <Toolbar drawerToggleClicked={this.sideDrawerClicked}/>
                 <Sidebar 
                     open={this.state.showSideDraw} 
                     closed={this.sideDrawClosedHandler}

@@ -19,7 +19,7 @@ const BtnContinue = styled.button`
     &.cancel {
         color: brown;
     }
-    &.sucess {
+    &.success {
         color: green;
     }
 `;

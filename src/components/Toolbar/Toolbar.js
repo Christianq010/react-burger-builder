@@ -23,10 +23,6 @@ const Toolbar = styled.header`
     nav {
         height: 100%;
     }
-    /* Hide when above 500px */
-    @media (max-width: 499px) {
-        /* display: none; */
-    }
 `;
 
 // Only for controlling logo size
@@ -34,6 +30,13 @@ const LogoHeight = styled.div`
     height: 80%;
 `;
 
+// Hide Nav Contents for Mobile Sidebar View
+const NavWrapper = styled.div`
+    /* Hide when above 500px */
+    @media (max-width: 499px) {
+        display: none;
+    }
+`;
 
 const toolbar = (props) => (
     <Toolbar>
@@ -41,7 +44,9 @@ const toolbar = (props) => (
         <LogoHeight>
             <Logo />
         </LogoHeight>
-        <Nav />
+        <NavWrapper>
+            <Nav />
+        </NavWrapper>
     </Toolbar>
 );
 

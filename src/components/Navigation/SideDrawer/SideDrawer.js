@@ -31,6 +31,7 @@ const SideDrawer = styled.div`
 
 const LogoHeight = styled.div`
     height: 11%;
+    margin-bottom: 17px;
 `;
 
 

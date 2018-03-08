@@ -22,8 +22,13 @@ const Toolbar = styled.header`
     nav {
         height: 100%;
     }
+    /* Hide when above 500px */
+    @media (max-width: 499px) {
+        display: none;
+    }
 `;
 
+// Only for controlling logo size
 const LogoHeight = styled.div`
     height: 80%;
 `;

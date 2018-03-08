@@ -19,7 +19,7 @@ const LogoDiv = styled.div`
 
 
 const logo = (props) => (
-    <LogoDiv>
+    <LogoDiv style={{height: props.height}}>
         <img src={logopic} alt="Burger Builder Logo" />
     </LogoDiv>
 );

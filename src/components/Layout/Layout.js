@@ -1,4 +1,5 @@
-import React from 'react';
+import React, {Component} from 'react';
+
 import Aux from '../../hoc/Aux';
 import Toolbar from './../Toolbar/Toolbar';
 import Sidebar from './../Navigation/SideDrawer/SideDrawer';
@@ -10,14 +11,28 @@ const Content = styled.main`
     margin-top: 72px;
 `;
 
-const layout = (props) => (
-    <Aux>
-        <Toolbar />
-        <Sidebar />
-        <Content>
-            {props.children}
-        </Content>
-    </Aux>
-);
+class Layout extends Component {
+    state = {
+        showSideDraw: true
+    }
+    sideDrawClosedHandler = () => {
+        this.setState({showSideDraw: false});
+    }
 
-export default layout; 
+    render () {
+        return (
+            <Aux>
+                <Toolbar />
+                <Sidebar 
+                    open={this.state.showSideDraw} 
+                    closed={this.sideDrawClosedHandler}
+                />
+                <Content>
+                    {this.props.children}
+                </Content>
+            </Aux>
+        )
+    }
+}
+
+export default Layout; 

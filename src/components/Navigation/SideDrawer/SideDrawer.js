@@ -1,7 +1,9 @@
 import React from 'react';
 
+import Aux from './../../../hoc/Aux';
 import Logo from './../../Logo/Logo';
 import NavItems from './../NavigationItems/NavigationItems'; 
+import Backdrop from './../../UI/Backdrop/Backdrop';
 
 // Styling
 import styled from 'styled-components';
@@ -35,14 +37,21 @@ const LogoHeight = styled.div`
 `;
 
 
-const sideDrawer = () => {
+const sideDrawer = (props) => {
+    let attachClass = ['close'];
+    if (props.open) {
+        attachClass = ['open'];
+    }
     return (
-        <SideDrawer>
-            <LogoHeight>
-                <Logo />
-            </LogoHeight>
-            <NavItems />
-        </SideDrawer>
+        <Aux>
+            <Backdrop show={props.open} clicked={props.closed}/>
+            <SideDrawer className={attachClass}>
+                <LogoHeight>
+                    <Logo />
+                </LogoHeight>
+                <NavItems />
+            </SideDrawer>
+        </Aux>
     );
 }
 

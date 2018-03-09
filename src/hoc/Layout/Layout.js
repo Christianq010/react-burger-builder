@@ -13,7 +13,7 @@ const Content = styled.main`
 
 class Layout extends Component {
     state = {
-        showSideDraw: true
+        showSideDraw: false
     }
     sideDrawClosedHandler = () => {
         this.setState({showSideDraw: false});

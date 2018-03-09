@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 
-import Aux from '../../hoc/Aux';
-import Toolbar from './../Toolbar/Toolbar';
-import Sidebar from './../Navigation/SideDrawer/SideDrawer';
+import Aux from '../Aux/Aux';
+import Toolbar from './../../components/Toolbar/Toolbar';
+import Sidebar from './../../components/Navigation/SideDrawer/SideDrawer';
 
 // Styling
 import styled from 'styled-components';

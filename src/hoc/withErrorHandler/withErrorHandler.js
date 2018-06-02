@@ -23,6 +23,7 @@ const withErrorHandler = (WrappedComponent, axios) => {
             this.setState({error: null});
         }
         // executed when the component isnt required anymore
+        // prevent memory leaks
         componentWillUnmount () {
             axios.interceptors.request.eject(this.reqInterceptor);
             axios.interceptors.response.eject(this.resInterceptor);
